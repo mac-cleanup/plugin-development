@@ -21,6 +21,9 @@ jobs:
         run: go build -buildmode=plugin -o dist/plugin.so src/plugin.go
 
       - name: Upload dist
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          commit_message: Upload new artifact
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            *.so
