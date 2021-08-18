@@ -24,4 +24,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: plugin.so
-          path: dist
+          path: dist/plugin.so
