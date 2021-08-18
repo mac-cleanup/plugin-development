@@ -1,6 +1,10 @@
 # plugin-template
 
-## Compile your plugin
-```bash
-go build -buildmode=plugin -o dist/plugin.so src/plugin.go
-```
+## Features
+WIP
+
+## License
+This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license.
+
+## Authors
+- [@fwartner](https://www.github.com/fwartner)
