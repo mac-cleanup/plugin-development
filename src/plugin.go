@@ -5,8 +5,6 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-
-	color "github.com/fatih/color"
 )
 
 type plugin string
@@ -17,7 +15,6 @@ func (g plugin) Cleanup() {
 	fmt.Println(introMsg)
 	DeleteFiles("~/.bash_history", "Bash history..")
 	DeleteFiles("~/.zhistory", "ZSH history..")
-	color.Cyan("Android caches..")
 	DeleteFiles("~/.android/cache", "Android caches..")
 	DeleteFiles("~/.gradle/caches", "")
 	DeleteFiles("~/wget-log", "wget history..")
@@ -52,7 +49,7 @@ func DeleteFiles(dir string, message string) error {
 		}
 	}
 
-	color.Cyan(message + "...")
+	fmt.Println(message)
 	return nil
 }
 
@@ -66,7 +63,7 @@ func ShellCommand(command string, message string) {
 	if err != nil {
 		fmt.Printf("error %s", err)
 	}
-	color.Cyan(message)
+	fmt.Println(message)
 }
 
 var Cleanup plugin
