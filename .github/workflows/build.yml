@@ -21,9 +21,7 @@ jobs:
         run: go build -buildmode=plugin -o dist/plugin.so src/plugin.go
 
       - name: Upload dist
-        uses: "marvinpinto/action-automatic-releases@latest"
+        uses: ncipollo/release-action@v1
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
-          files: |
-            *.so
+          artifacts: "*.so"
+          token: ${{ secrets.GITHUB_TOKEN }}
