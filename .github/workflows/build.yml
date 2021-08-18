@@ -27,3 +27,4 @@ jobs:
           author_email: mac-cleanup@wartner.io
           message: 'Added new binary'
           add: '*.so'
+          cwd: './dist/'
